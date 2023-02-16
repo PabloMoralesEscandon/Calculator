@@ -4,39 +4,41 @@
 int main() {
 
 char operacion;
-int primerOperando, segundoOperando;
+double primerOperando, segundoOperando;
 
-while(1) {
-    
-    primerOperando = check();
+while(1){
+    while(1) {
+        
+        primerOperando = check();
 
-    segundoOperando = check();
+        segundoOperando = check();
 
-    clean();
+        clean();
 
-    while (1){
-        printf("Elige la operación ( +, -, *, /):");
-        scanf("%c", &operacion);
+        while (1){
+            printf("Elige la operación ( +, -, *, /):");
+            scanf("%c", &operacion);
 
-        switch (operacion){
-            case '+':
-                printf("%ld + %ld = %ld\n", primerOperando, segundoOperando, primerOperando + segundoOperando);
-                return;
-            case '-':
-                printf("%ld - %ld = %ld\n", primerOperando, segundoOperando, primerOperando - segundoOperando);
-                return;
-            case '*':
-                printf("%ld * %ld = %ld\n", primerOperando, segundoOperando, primerOperando * segundoOperando);
-                return;
-            case '/':
-                printf("%ld / %ld = %ld\n", primerOperando, segundoOperando, primerOperando / segundoOperando);
-                return;
-            default:
-                printf("Operador no válido");
-                clean();
-                continue;
+            switch (operacion){
+                case '+':
+                    printf("%lf + %lf = %lf\n", primerOperando, segundoOperando, primerOperando + segundoOperando);
+                    goto EndWhile;
+                case '-':
+                    printf("%lf - %lf = %lf\n", primerOperando, segundoOperando, primerOperando - segundoOperando);
+                    goto EndWhile;
+                case '*':
+                    printf("%lf * %lf = %lf\n", primerOperando, segundoOperando, primerOperando * segundoOperando);
+                    goto EndWhile;
+                case '/':
+                    printf("%lf / %lf = %lf\n", primerOperando, segundoOperando, primerOperando / segundoOperando);
+                    goto EndWhile;
+                default:
+                    printf("Operador no válido.\n");
+                    clean();
+                    continue;
+            }
         }
+        EndWhile: ;
     }
 }
-
 }

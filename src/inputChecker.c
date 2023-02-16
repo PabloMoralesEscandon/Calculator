@@ -4,16 +4,16 @@
 #include "cleaner.h"
 
 double check(void){
-    int numero;
+    double numero;
     int i;
-    printf("Escriba el numero a operar: \n");
+    printf("Escriba el numero a operar: ");
      do{
-        i = scanf("%d", &numero);
+        i = scanf("%lf", &numero);
         if ( i == 1){
-            printf("Entrada correcta: %d\n", numero);
+            printf("\nEntrada correcta: %lf\n", numero);
         }
          else{
-            printf("Entrada no válida, por favor escriba un número: \n");
+            printf("\nEntrada no válida, por favor escriba un número: ");
             clean();
          } 
      } while ( i != 1);
